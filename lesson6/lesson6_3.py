@@ -1,5 +1,11 @@
 import argparse
 import random
+# 猜數字遊戲
+# 這是一個簡單的猜數字遊戲，玩家需要猜一個隨機生成的數字
+# 在每次遊戲中，玩家可以輸入一個範圍內的數字，直到猜中為止
+# 遊戲會提示玩家猜的數字是大了還是小了  
+# 玩家可以選擇是否繼續遊戲
+# 如果沒有輸入姓名，則使用預設值
 
 playCount = 1
 parser = argparse.ArgumentParser(description="猜數字遊戲")
