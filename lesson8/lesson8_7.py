@@ -6,7 +6,7 @@ client = genai.Client()
 
 with gr.Blocks() as demo:
     gr.Markdown("## Text to Summarization(總結)")
-    style_radio = gr.Radio(choices=['小學','商業','專業','口語化','條列式'], label="風格",value="口語化")
+    style_radio = gr.Radio(choices=['小學','老學究','專業','幽默風趣','搞笑'], label="風格",value="口語化")
     input_text = gr.Textbox(
         label="請輸入文章",
         lines=10,
@@ -16,14 +16,14 @@ with gr.Blocks() as demo:
 
     @input_text.submit(inputs=[style_radio, input_text], outputs=[output_md])
     def summarize(style, text):
-        if style=="口語化":
-            style = "請使用口語化的風格\n"
+        if style=="幽默風趣":
+            style = "請使用幽默風趣的風格\n"
         elif style == "小學":
             style = "請使用小學生看的懂的語法\n"
-        elif style == "商業":
-            style = "請使用商業文章的風格\n"
-        elif style == "條列式":
-            style = "請條列式重點\n"
+        elif style == "老學究":
+            style = "請使用老學究的風格\n"
+        elif style == "搞笑":
+            style = "請搞笑的講解方式\n"
         elif style == "專業":
             style = "請使用專業的風格\n"
         
