@@ -3,6 +3,7 @@ from google import genai
 from dotenv import load_dotenv
 import os
 load_dotenv()
+
 app = Flask(__name__)
 client = genai.Client(api_key=os.getenv("GENAI_API_KEY"))
 
@@ -76,5 +77,4 @@ def chat():
         html_format = response.text.replace("```html","").replace("```","")
         return jsonify({'html': html_format})
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
-    
+        return jsonify({'error': str(e)}), 500    
