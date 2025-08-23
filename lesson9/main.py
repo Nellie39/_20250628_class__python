@@ -77,3 +77,4 @@ def chat():
         return jsonify({'html': html_format})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+    
