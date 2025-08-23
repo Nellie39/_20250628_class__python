@@ -77,4 +77,4 @@ def chat():
         html_format = response.text.replace("```html","").replace("```","")
         return jsonify({'html': html_format})
     except Exception as e:
-        return jsonify({'error': str(e)}), 500    
+        return jsonify({'error': str(e)}), 500
